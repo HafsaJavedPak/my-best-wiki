@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New  Page
+{% endblock %}
+
+
+<!-- New Page Content -->
+{% block body %}
+    {% if ignoreWarning %}
+        <form action="{% url 'newpage' 'ignore' %}" id="edit-add-page" method="post">
+    {% else %}
+        <form action="{% url 'newpage' %}" id="edit-add-page" method="post">
+    {% endif %}
+        {% csrf_token %}
+        <header>
+            <nav><button type="submit">Save</button></nav>
+        </head>
+        <main>
+            <h1><input type="text" name="{{ form.title.name }}" value="{{ form.title.initial }}" placeholder="{{form.title.field.widget.attrs.placeholder}}"></h1>
+            <div><textarea name="{{ form.text.name }}" placeholder="{{ form.title.field.widget.attrs.placeholder }}">{{ form.text.initial }}</textarea></div>
+        </main>
+    </form>
+{% endblock %}
+

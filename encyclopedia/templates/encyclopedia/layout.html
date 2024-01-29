@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="icon" type="png" href="../../static/encyclopedia/logo.png">
+        <link href="{% static 'encyclopedia/layout-styles.css' %}" rel="stylesheet">
+    </head>
+    
+    
+    <body>
+        <!-- <script src="{% static 'encyclopedia/index.js' %}"></script> -->
+        <div class="row">
+            <div class="sidebar">
+                <div class="around-mini-banner"><div id="mini-banner">
+                    <a href="{% url 'index'%}"><h2><img src="../../static/encyclopedia/logo.png" title="Home"><span> My Wiki</span></h2></a>
+                </div></div>
+                <div class="sidebar-subgrid">
+                    <div class="side-links">
+                        <div>
+                            <a href="{% url 'newpage'%}"><img src="../../static/encyclopedia/new.png" title="New Page"></a>
+                        </div>
+                        <div>
+                            <a href="{% url 'all' %}"><img src="../../static/encyclopedia/all.png" title="All Pages"></a>
+                        </div>
+                        <div>
+                            <a href="{% url 'random'%}"><img src="../../static/encyclopedia/random.png" title="All Pages"></a>
+                        </div>
+                    </div>
+                    <div class="around-all_pages">
+                        <div class="small-search-box"><form action="{% url 'search'%}" method="get">
+                            <input id="search-box" class="search" type="text" name="q" placeholder="Search Your Wiki :)">
+                        </form></div>
+                        <div class="all_pages">
+                            <ul>
+                                {% for entry in entries %}
+                                    <li><a href="{% url 'page' entry %}">{{ entry }}</a></li>
+                                {% endfor %}                            
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main">
+                <div class="bodycontent">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

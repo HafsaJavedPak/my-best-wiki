@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% if want_all_entries %}
+        All Pages
+    {% else %}
+        Your Pages
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<ul>
+    <div class="gallery">
+        {% if want_all_entries %}
+            <h1>All Pages</h1>
+            {% for entry in entries %}
+            <li><a href="{% url 'page' entry %}">{{ entry }}</a></li>
+            {% endfor %}
+        {% else %}
+        <h1>Your Pages</h1>
+            {% if exact_entry != None%}
+                <li><a href="{% url 'page' exact_entry %}"><strong>{{ exact_entry }}</strong></a></li>
+            {% endif %}
+            {% for entry in search_entries%}
+                <li><a href="{% url 'page' entry %}">{{ entry }}</a></li>
+            {% endfor %}
+        {% endif %}        
+    </div>
+</ul>
+
+{% endblock %}

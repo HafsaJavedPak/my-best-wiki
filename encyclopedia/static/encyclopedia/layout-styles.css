@@ -1,0 +1,226 @@
+@import url(main.css);
+body {
+  margin: 0;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: #650C3F;
+  overflow: hidden;
+}
+
+code {
+  white-space: pre;
+}
+
+h1 {
+  margin: 10px 0px 20px 0px;
+  padding: 20px 0px 20px 0px;
+  border-bottom: 1px solid #dfe1e5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #4F0931;
+}
+
+textarea {
+  height: 400px;
+  width: 80%;
+}
+
+scrollbar {
+  scrollbar-width: thin;
+}
+
+form .errorlist {
+  display: none;
+}
+
+.title-head {
+  color: #D64FA1;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.title-head a {
+  text-align: right;
+  color: #D64FA1;
+}
+.title-head ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
+}
+.title-head li {
+  text-decoration: underline;
+  list-style: none;
+  display: inline-flex;
+}
+.title-head li:last-child {
+  text-align: right;
+  margin-right: 40px;
+}
+
+#edit-add-page nav {
+  margin: 0px;
+  text-align: right;
+  font-size: 80%;
+  padding: 0px;
+  margin-left: 10px;
+}
+#edit-add-page button {
+  background: none;
+  border: none;
+  color: #D64FA1;
+  font-weight: 800;
+}
+#edit-add-page button:hover, #edit-add-page button:focus {
+  text-decoration: underline;
+}
+#edit-add-page h1 {
+  margin-top: 0px;
+}
+#edit-add-page input, #edit-add-page textarea {
+  background: none;
+  border: none;
+  color: #650C3F;
+}
+#edit-add-page input:focus, #edit-add-page textarea:focus {
+  outline: none;
+}
+#edit-add-page textarea[name=text] {
+  width: 100%;
+  height: calc(100vh - 180px);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+@media (max-width: 1000px) {
+  .row {
+    grid-template-columns: 1fr 7fr;
+  }
+}
+
+.main {
+  border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 30px;
+}
+.main .bodycontent {
+  overflow-wrap: break-word;
+  max-width: 1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: calc(100vh - 50px);
+}
+
+.search {
+  width: 100%;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.sidebar {
+  height: 100vh;
+  padding: 15px 0px 0px 15px;
+  background-color: #A30A60;
+}
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .around-mini-banner {
+  background-color: #FFE8FD;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.sidebar #mini-banner {
+  height: 53px;
+  background-color: #A30A60;
+  border-bottom-right-radius: 10px;
+  margin-top: 0px;
+}
+@media (max-width: 1000px) {
+  .sidebar #mini-banner {
+    border-bottom-right-radius: 0px;
+  }
+  .sidebar #mini-banner span {
+    display: none;
+  }
+}
+.sidebar #mini-banner h2 {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+.sidebar #mini-banner h2 img {
+  margin-top: 0px;
+}
+.sidebar #mini-banner a:hover {
+  text-decoration: none;
+}
+.sidebar .sidebar-subgrid {
+  height: calc(100vh - 67px);
+  margin-top: 0px;
+  padding-top: 0px;
+  display: grid;
+  grid-template-columns: 1fr 4.5fr;
+}
+@media (max-width: 1000px) {
+  .sidebar .sidebar-subgrid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar .sidebar-subgrid .around-all_pages {
+    display: none;
+  }
+}
+.sidebar img {
+  width: 40px;
+  height: auto;
+  margin: 10px;
+}
+.sidebar .around-all_pages {
+  border-top-left-radius: 10px;
+  padding: 10px;
+  background-color: #FFE8FD;
+  overflow-y: scroll;
+}
+.sidebar .around-all_pages input {
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 90%;
+  padding: 8px;
+  padding-left: 10px;
+  border-radius: 20px;
+  border: 1px solid #dfe1e5;
+}
+.sidebar .around-all_pages input:focus {
+  outline: none;
+}
+.sidebar .around-all_pages .all_pages ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.sidebar .around-all_pages .all_pages li {
+  list-style: none;
+  font-size: small;
+}
+
+.gallery a, .around-all_pages a {
+  text-decoration: none;
+  color: #650C3F;
+}
+.gallery a:hover, .around-all_pages a:hover {
+  text-decoration: underline;
+}
+
+/* this is for displaying the pages in index.html */
+.gallery {
+  padding-left: 0px;
+}
+.gallery li {
+  list-style: none;
+}
+
+/*# sourceMappingURL=layout-styles.css.map */
