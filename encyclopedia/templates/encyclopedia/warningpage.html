@@ -1,0 +1,43 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Warning :(
+{% endblock %}
+
+{% block body %}
+    <main id="warning">
+        <h1>Warning :(</h1>
+        <div>A File With This Name Already Exists !</div>
+        <div>Do You Want to Replace it ?</div>
+        <div id="options">
+            <a href="{% url 'newpage' 'yes'%}"><img src="../../static/encyclopedia/tick.png"></a>
+            <a href="{% url 'newpage' 'no'%}"><img src="../../static/encyclopedia/cross.png"></a>
+
+        </div>
+        <style>
+            h1 {
+                margin: 20px;
+                margin-bottom: 40px;
+            }
+            #warning {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #options img {
+                width: 50px;
+                height: auto;
+                margin : 20px;
+                margin-top: 0px;
+            }
+            #options {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        </style>
+    </main>
+{% endblock%}
+

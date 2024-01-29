@@ -1,0 +1,259 @@
+@import url(main.css);
+
+
+$my-dark-purple : #A30A60; 
+$purple-for-text : #650C3F;
+$my-grayish-pink : #FFE8FD;
+$background-pink : #FFF7FF;
+$my-gray :#dfe1e5;
+$dark-pink : #D64FA1;
+$width-breakpoint : 1000px;
+
+// :root {
+// --bannerHeight : 55px
+// }
+body {
+    margin: 0;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color : $purple-for-text;
+    overflow: hidden;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin: 10px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px solid #dfe1e5;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #4F0931;
+}
+textarea {
+    height: 400px;
+    width: 80%;
+    // overflow-y: hidden;
+}
+scrollbar {
+    scrollbar-width: thin;
+}
+// for hiding the this field is requireed option in form
+form {
+    .errorlist {
+        display: none;
+    }
+}
+
+// for editing and addding page
+.title-head{
+    
+    color: $dark-pink;
+    font-weight: 800;
+    margin-bottom: 10px;
+    // display: inline;
+    // text-decoration-style:italic;
+    a {
+        text-align: right;
+        color: $dark-pink;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        margin: 0px;
+    }
+    li {
+        text-decoration: underline;
+        list-style: none;
+        display: inline-flex;
+    }
+    li:last-child {
+        text-align: right;
+        margin-right: 40px;
+    // font-family: 'PT Sans Narrow'  ;
+    //    display: inline-flex;
+    //     justify-content: space-between;
+    //     text-align: right;
+    }
+}
+#edit-add-page {
+    nav {
+        margin: 0px;
+        text-align: right;
+        font-size: 80%;
+        padding: 0px;
+        margin-left : 10px;
+    }
+    button {
+        background: none;
+        border : none;
+        color : $dark-pink;
+        font-weight: 800;
+    }
+    button:hover, button:focus {
+        text-decoration: underline;
+    }
+    h1 {
+        margin-top: 0px;
+    }
+    input, textarea {
+        background: none;
+        border: none;
+        color : $purple-for-text
+    }
+    input:focus, textarea:focus {
+        outline: none;
+    } 
+    textarea[name="text"] {
+        width: 100%;
+        height: calc(100vh - 180px);
+    }
+}
+
+// grid display
+.row {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    @media (max-width: $width-breakpoint) {
+        grid-template-columns: 1fr 7fr;
+    }
+}
+
+// for stuff inside main
+.main {
+    // height: 100vh;
+    border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    // background-color: aqua;
+    padding: 30px;
+    // overflow: scroll;
+    .bodycontent {
+        overflow-wrap: break-word;
+        // background-color: aqua;
+        max-width:1000px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        max-height: calc(100vh - 50px);
+        // background-color: aqua;
+        // word-wrap: break-word;
+    }
+
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    height: 100vh;
+    padding: 15px 0px 0px 15px;
+    background-color: #A30A60;
+    @media (max-width : $width-breakpoint) {
+        width: 100%;
+    }
+    .around-mini-banner {
+        background-color: #FFE8FD;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    #mini-banner {
+        height: 53px;
+        background-color: #A30A60;
+        border-bottom-right-radius: 10px;
+        margin-top: 0px;    
+        @media (max-width: $width-breakpoint) {
+            border-bottom-right-radius: 0px;            
+            span {
+                display: none;
+            }
+        }
+
+        h2 {
+            // padding-left: 20px;
+            font-size: 1.25em;
+            font-weight: 700;
+        img {
+            margin-top: 0px;
+        }
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    .sidebar-subgrid{
+        height: calc(100vh - 67px);
+        margin-top: 0px;
+        padding-top: 0px;
+        display: grid;
+        grid-template-columns: 1fr 4.5fr;
+        @media (max-width: $width-breakpoint) {
+            grid-template-columns: 1fr;
+            .around-all_pages {
+                display: none;
+            }
+        }
+    }
+    img {
+        width: 40px;
+        height: auto;
+        margin: 10px;
+    }
+    .around-all_pages {
+        border-top-left-radius: 10px;
+        padding: 10px;
+        background-color: #FFE8FD;
+        overflow-y: scroll;
+        input {
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 90%;
+            padding: 8px;
+            padding-left: 10px;
+            border-radius: 20px;
+            border: 1px solid $my-gray;
+        }
+        input:focus {
+            outline: none;
+        }
+        .all_pages{
+            ul {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+                
+            li {
+                list-style: none;
+                font-size: small;
+            }
+
+        }
+    }
+    
+}
+
+// for all the <a>s
+.gallery, .around-all_pages {
+    a {
+        text-decoration: none;
+        color: $purple-for-text;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+/* this is for displaying the pages in index.html */
+.gallery {
+    padding-left: 0px;
+    li {
+        list-style: none;
+    }
+    ul {
+    }
+}
+
